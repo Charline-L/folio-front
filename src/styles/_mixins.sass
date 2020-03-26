@@ -1,0 +1,109 @@
+=size($width, $height: $width)
+  width: $width
+  height: $height
+
+=font-size($fontSize, $lineHeight: $fontSize)
+  font-size: $fontSize
+  line-height: $lineHeight
+
+=absolute($top: auto, $right: auto, $bottom: auto, $left: auto)
+  position: absolute
+  top: $top
+  right: $right
+  left: $left
+  bottom: $bottom
+
+=hover
+  &:hover, &:focus-within
+    @content
+
+=transition-1
+  transition: all 0.25s ease-in-out
+
+=transition-2
+  transition: all 0.5s ease-in-out
+
+=will-transform
+  will-change: transform
+  *
+    will-change: transform
+
+=break-max($value)
+  @media all and (max-width: $value)
+    @content
+
+=break-min($value)
+  @media all and (min-width: $value)
+    @content
+
+=remove-margin-h
+  &:last-child
+    margin-right: 0
+
+  &:first-child
+    margin-left: 0
+
+=remove-padding-h
+  &:last-child
+    padding-right: 0
+
+  &:first-child
+    padding-left: 0
+
+=remove-margin-list-h($nb)
+  &:nth-child(#{$nb}n + 1), &:first-child
+    margin-left: 0
+
+  &:nth-child(#{$nb}n), &:last-child
+    margin-right: 0
+
+=remove-margin-v
+  &:last-child
+    margin-bottom: 0
+
+  &:first-child
+    margin-top: 0
+
+=remove-padding-v
+  &:last-child
+    padding-bottom: 0
+
+  &:first-child
+    padding-top: 0
+
+=box-shadow
+  box-shadow: 0 4px 34px rgba(0, 0, 0, 0.2)
+
+=cover
+  +size(100%)
+  object-fit: cover
+  object-position: center
+  font-family: 'object-fit: cover; object-position: center'
+
+=contain
+  +size(100%)
+  object-fit: contain
+  object-position: center
+  font-family: 'object-fit: contain; object-position: center'
+
+=gradient($width, $height, $top, $right, $bottom, $left, $direction)
+  +size($width, $height)
+  background-color: black
+  +absolute($top, $right, $bottom, $left)
+  background: linear-gradient(to $direction, rgba(0,0,0,0.71) 0%, rgba(0,0,0,0) 100%)
+
+=bg-color($color)
+  background-color: $color
+
+@function strip-unit($num)
+  @return $num / ($num * 0 + 1)
+
+=after
+  &:after
+    content: ''
+    @content
+
+=before
+  &:before
+    content: ''
+    @content

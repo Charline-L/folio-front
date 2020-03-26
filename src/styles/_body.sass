@@ -1,0 +1,23 @@
+body
+  background-color: grey
+  
+  &.stop-scroll
+    width: 100%
+    height: 100%
+    overflow: hidden
+
+  &.pointers-off
+    *
+      pointer-events: none !important
+
+  +break-max($small-phone)
+    * 
+      hyphens: auto
+
+  *::selection 
+    background-color: $selectionBG 
+    color: $selectionColor
+
+body:not(.no-focus)
+  *:focus
+    outline: 1px solid $outline

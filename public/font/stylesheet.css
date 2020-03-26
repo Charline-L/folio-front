@@ -1,0 +1,62 @@
+/*!
+ * Web Fonts from Fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2019 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      S-Core
+ * License URL: https://www.fontspring.com/licenses/s-core/webfont
+ *
+ *
+ */
+
+@font-face {
+    font-family: 'coresansc35';
+    src: url('coresansc35-webfont.woff2') format('woff2'),
+         url('coresansc35-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'coresansc35it';
+    src: url('coresansc35it-webfont.woff2') format('woff2'),
+         url('coresansc35it-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'coresansc65';
+    src: url('coresansc65-webfont.woff2') format('woff2'),
+         url('coresansc65-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'coresansc65it';
+    src: url('coresansc65it-webfont.woff2') format('woff2'),
+         url('coresansc65it-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
