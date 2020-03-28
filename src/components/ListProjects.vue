@@ -25,6 +25,7 @@ export default {
 
 <style lang="sass">
 .c-list-projects
+  margin-bottom: 10rem
   +size(100%, auto)
   
   &__item

@@ -57,6 +57,10 @@ export default {
   margin-bottom: 1rem
   +remove-margin-v
 
+  &:hover
+    .c-tag__number
+      right: -4rem
+
   &--active
     .c-tag__number
       color: $powder
