@@ -1,9 +1,9 @@
 <template>
-  <div class="c-circle-and-text">
-    <span class="c-circle-and-text__emoji">
+  <div :class="`c-circle-and-text ${className}`">
+    <span class="c-circle-and-text__emoji" aria-label="hidden">
       {{ emoji }}
     </span>
-    <div class="c-circle-and-text__container-texts">
+    <div class="t-t1">
       <p>{{ firstMessage }}</p>
       <p v-if="secondMessage">{{ secondMessage }}</p>
     </div>
@@ -17,6 +17,7 @@ export default {
     firstMessage: String,
     secondMessage: String,
     emoji: String,
+    className: String,
   }
 }
 </script>
@@ -36,10 +37,5 @@ export default {
     font-size: 5rem
     padding-top: 1rem  
     margin-right: 8rem
-
-  &__container-texts
-    font-family: $bold
-    font-size: 3.2rem
-    line-height: 5rem
 
 </style>

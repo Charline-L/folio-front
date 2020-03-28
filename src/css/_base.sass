@@ -1,0 +1,35 @@
+$base-font-size: 1.4rem
+
+html
+
+  font-size: #{(1/strip-unit($laptop)*1000)}vw
+
+  +break-min($big-laptop)
+    font-size: #{$big-laptop/$laptop*10}px
+
+  +break-max($small-laptop)
+    font-size: #{(1/strip-unit($small-laptop)*1000)}vw
+
+  +break-max($tablet)
+    font-size: #{(1/strip-unit($tablet)*1000)}vw
+
+  +break-max($phone)
+    font-size: #{(1/strip-unit($phone)*1000)}vw
+
+  +break-max($small-phone)
+    font-size: #{(1/strip-unit($small-phone)*1000)}vw
+
+
+body
+
+  +break-max($phone)
+    font-size: 16px // Eviter les bug zoom sur les inputs sur iOS
+
+
+h1, h2, h3, h4, h5, h6, p, button
+  font-size: $base-font-size
+
+h1, h2, h3, h4, p, strong, b, i, em
+  font-size: inherit
+  line-height: inherit
+  color: inherit
