@@ -83,9 +83,12 @@ export default {
     +size(11.4rem)
     border-radius: 100%
     +transition-25-ease
+    overflow: hidden
 
     &:hover
       background-color: $black
+      .c-boxe-project__svg
+        animation: arrow-animation 0.3s linear forwards
       path
         fill: $powder
 
@@ -95,4 +98,18 @@ export default {
     path
       +transition-25-ease
       fill: $black
+
+
+@keyframes arrow-animation
+  0%
+    transform: translateX(0)
+
+  50%
+    transform: translateX(200%)
+
+  51%
+    transform: translateX(-200%)
+
+  100%
+    transform: translateX(0)
 </style>
