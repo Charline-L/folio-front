@@ -11,7 +11,7 @@
         <p>n’existe pas...</p>
       </div>
 
-      <p class="p-table__circle t-emoji">👀</p>
+      <p class="p-table__circle t-emoji--small">👀</p>
 
     </header>
 

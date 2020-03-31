@@ -4,9 +4,9 @@
 
     <header class="p-table__top">
 
-      <h1 class="p-table__right t-t1">Mentions légales</h1>
+      <h1 class="p-table__left t-t1">Mentions légales</h1>
 
-      <div class="p-table__left p-table__intro t-description">
+      <div class="p-table__right p-table__intro t-description">
         <p class="t-bold">Charline Laporte</p>
         <p>{{ email }}</p>
       </div>
@@ -17,8 +17,8 @@
 
     <main class="p-table__middle t-description">
 
-      <p class="p-table__bloc p-table__right">Hébergement</p>
-      <div class="p-table__bloc p-table__left" v-html="registar"></div>
+      <h2 class="p-table__bloc p-table__left">Hébergement</h2>
+      <div class="p-table__bloc p-table__right" v-html="registar"></div>
 
     </main>
 
@@ -30,7 +30,6 @@
 
 <script>
 import TableEnd from '../components/TableEnd'
-
 import axios from 'axios'
 
 export default {
@@ -54,7 +53,6 @@ export default {
         const data = response.data.acf
         this.email = data.email
         this.registar = data.registar
-        console.log('data', data)
       })
       .catch(error => {
         console.log('error', error)

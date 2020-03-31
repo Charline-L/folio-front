@@ -41,22 +41,32 @@ export default {
     justify-content: space-between
     position: relative
 
-  &__right
-    +size(calc(35% - 2rem), auto)
-
   &__left
+    +size(calc(35% - 2rem), auto)
+    padding-right: 4rem
+
+  &__right
     +size(calc(65% - 2rem), auto)
 
   &__intro
-    *:first-child
-      line-height: 5rem
+
+    & > *
+      margin-right: 4rem
+      +remove-margin-h
+    
+      *:first-child
+        line-height: 5rem
+
+    &--column
+      display: flex
 
   &__middle
     display: flex
     justify-content: space-between
 
   &__bloc
-    padding: 3rem 0 6rem 0
+    padding-top: 3rem
+    padding-bottom: 6rem
     border-top: solid 5px $black
 
   &__circle
@@ -70,4 +80,5 @@ export default {
     display: flex
     justify-content: center
     align-items: center
+
 </style>
