@@ -19,7 +19,7 @@ const
             styles: 'src/css/*.sass',
         },
         outputs: {
-            styles: 'public/',
+            styles: 'src/css/',
         }
     }
 
