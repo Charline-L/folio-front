@@ -1,6 +1,6 @@
 <template>
   <div :class="`c-circle-and-text ${className}`">
-    <span class="c-circle-and-text__emoji" aria-label="hidden">
+    <span class="c-circle-and-text__emoji t-emoji" aria-label="hidden">
       {{ emoji }}
     </span>
     <div class="t-t1">
@@ -34,7 +34,6 @@ export default {
     align-items: center
     background-color: $black
     border-radius: 100%
-    font-size: 5rem
     padding-top: 1rem  
     margin-right: 8rem
 

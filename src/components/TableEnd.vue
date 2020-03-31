@@ -1,8 +1,8 @@
 <template>
 
-  <section class="c-table">
+  <section class="c-table-end">
 
-    <router-link to="/">Retour à la page d'accueil</router-link>
+    <router-link to="/" class="t-t2">Retour à la page d'accueil</router-link>
 
   </section>
 
@@ -25,6 +25,8 @@ export default {
 
 <style lang="sass">
 .c-table-end
-  background-color: red
+  border-top: solid 5px $black
+  border-bottom: solid 5px $black
+  padding: 8rem 0
 
 </style>

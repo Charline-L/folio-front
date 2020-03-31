@@ -2,7 +2,7 @@
 
   <div id="home" class="p-home t-black">
 
-     <header class="g-flux--large ">
+     <header class="g-flux--large">
 
       <CircleAndText 
         v-if="introduction"
@@ -126,6 +126,7 @@ export default {
 <style lang="sass">
 
 .p-home
+  padding-top: 10rem
 
   &__top
     margin-bottom: 10rem

@@ -1,11 +1,22 @@
 <template>
 
-  <div id="notfound" class="p-notfound t-black c-table">
+  <div id="notfound" class="p-notfound g-flux--large t-black p-table">
 
-    <p>Page introuvable</p>
+    <header class="p-table__top">
+
+      <h1 class="p-table__right t-t1">Oups</h1>
+
+      <div class="p-table__left p-table__intro t-description">
+        <p class="t-bold">La page que vous demandez</p>
+        <p>n’existe pas...</p>
+      </div>
+
+      <p class="p-table__circle t-emoji">👀</p>
+
+    </header>
 
     <TableEnd />
-    
+
   </div>
 
 </template>
