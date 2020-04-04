@@ -34,14 +34,20 @@
 
     </header>
 
-    <main class="p-table__middle t-description" v-if="middle">
+    <main>
 
-      <div class="p-table__bloc p-table__left" v-html="middle.description"></div>
-      <div class="p-table__bloc p-table__right" v-html="middle.list"></div>
+      <section class="p-table__middle t-description" v-if="middle">
+
+        <div class="p-table__bloc p-table__left" v-html="middle.description"></div>
+        <div class="p-table__bloc p-table__right" v-html="middle.list"></div>
+
+      </section>
+
+      <ListImages v-if="images" :images="images" />
+
+      <TableEnd />
       
     </main>
-
-    <TableEnd />
     
   </div>
 
@@ -49,12 +55,14 @@
 
 <script>
 import TableEnd from '../components/TableEnd'
+import ListImages from '../components/ListImages'
 import axios from 'axios'
 
 export default {
   name: 'Projects',
   components: {
-    TableEnd
+    TableEnd,
+    ListImages
   },
   data() {
     return {
@@ -75,7 +83,6 @@ export default {
         this.top = data.top
         this.middle = data.middle
         this.images = data.images
-        console.log('data', data)
       })
       .catch(error => {
         console.log('error', error)
@@ -89,5 +96,7 @@ export default {
 .p-projects
   background-color: $powder
   padding-top: 10rem
+  padding-bottom: 10rem
   min-height: 100vh
+
 </style>
