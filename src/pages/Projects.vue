@@ -45,6 +45,8 @@
 
       <ListImages v-if="images" :images="images" />
 
+      <VideoPlayer v-if="movie" :src="movie" />
+
       <LinksEnd :next="next" />
       
     </main>
@@ -56,13 +58,15 @@
 <script>
 import LinksEnd from '../components/LinksEnd'
 import ListImages from '../components/ListImages'
+import VideoPlayer from '../components/VideoPlayer'
 import axios from 'axios'
 
 export default {
   name: 'Projects',
   components: {
     LinksEnd,
-    ListImages
+    ListImages,
+    VideoPlayer
   },
   data() {
     return {
@@ -74,7 +78,8 @@ export default {
         id: null,
         image: null,
         title: null
-      }
+      },
+      movie: null
     }
   },
   created () {
@@ -96,6 +101,8 @@ export default {
           this.middle = data.middle
           this.images = data.images
           this.next.id = data.next
+          this.movie = data.movie
+
           this.getNext()
         })
         .catch(error => {
@@ -127,6 +134,7 @@ export default {
         image: null,
         title: null
       }
+      this.movie = null;
     }
   }
 }
