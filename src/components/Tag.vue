@@ -16,7 +16,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
-
+import anime from 'animejs'
 
 export default {
   name: 'Tag',
@@ -28,8 +28,12 @@ export default {
   },
   data(){
     return {
-      numberOfProjects: this.getNumberOfProjects()
+      numberOfProjects: this.getNumberOfProjects(),
+      $list: null
     }
+  },
+  mounted(){
+    this.$filters = document.querySelector('.c-list-filters')
   },
   methods: {
     getNumberOfProjects(){
@@ -40,6 +44,16 @@ export default {
       this.changeFilter({
         value: isActive ? null : this.value, 
         category: isActive ? null : this.category
+      })
+      this.scrollToList()
+    },
+    scrollToList() {
+
+      anime({
+        targets: ['html', 'body'],
+        scrollTop: this.$filters.offsetTop - 50,
+        duration: 500,
+        easing: 'easeOutExpo'
       })
     },
     ...mapMutations({
