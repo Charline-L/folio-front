@@ -40,4 +40,10 @@ export default {
 .c-filters
   display: flex
   flex-direction: column
+
+  +break-max($tablet)
+    flex-direction: row
+    flex-wrap: wrap
+    margin-bottom: 2rem
+    justify-content: center
 </style>

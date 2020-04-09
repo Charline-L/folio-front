@@ -75,9 +75,14 @@ export default {
       +absolute(0, 0)
       +size(calc(100% - 10px))
 
+      +break-max($tablet)
+        border-width: 2px
+        +size(calc(100% - 4px))
+
     &:hover
-      .c-list-technos__tooltip
-        opacity: 1
+      +break-min($tablet)
+        .c-list-technos__tooltip
+          opacity: 1
 
   &__tooltip
     +absolute(0, 0)
@@ -94,6 +99,10 @@ export default {
 
     &::selection
       background-color: $powder
+      color: $black
+
+    +break-max($tablet)
+      bottom: -10px
       color: $black
 
   &__image

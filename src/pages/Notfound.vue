@@ -15,19 +15,19 @@
 
     </header>
 
-    <TableEnd />
+    <LinksEnd />
 
   </div>
 
 </template>
 
 <script>
-import TableEnd from '../components/TableEnd'
+import LinksEnd from '../components/LinksEnd'
 
 export default {
   name: 'Notfound',
   components: {
-    TableEnd
+    LinksEnd
   },
   mounted () {
     window.scrollTo(0, 0)
@@ -40,4 +40,8 @@ export default {
   background-color: $powder
   padding-top: 10rem
   min-height: 100vh
+
+  +break-max($tablet)
+    .c-table-end
+      padding-top: 10rem
 </style>

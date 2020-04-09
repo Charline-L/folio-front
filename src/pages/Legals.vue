@@ -22,20 +22,20 @@
 
     </main>
 
-    <TableEnd />
+    <LinksEnd />
 
   </div>
 
 </template>
 
 <script>
-import TableEnd from '../components/TableEnd'
+import LinksEnd from '../components/LinksEnd'
 import axios from 'axios'
 
 export default {
   name: 'Legals',
   components: {
-    TableEnd
+    LinksEnd
   },
   data() {
     return {
@@ -55,8 +55,7 @@ export default {
         this.registar = data.registar
       })
       .catch(error => {
-        console.log('error', error)
-        console.log('url', process.env.VUE_APP_API + 'acf/v3/pages/5')
+        console.error('error', error)
       })
   }
 }

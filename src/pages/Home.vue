@@ -105,19 +105,17 @@ export default {
         this.socials = data.socials
       })
       .catch(error => {
-        console.log('error', error)
-        console.log('url', process.env.VUE_APP_API + 'acf/v3/pages/5')
+        console.error('error', error)
       })
 
     axios
-    .get(process.env.VUE_APP_API + 'posts')
+    .get(process.env.VUE_APP_API + 'posts?per_page=20')
       .then(response => {
         const data = response.data
         this.projects = data
       })
       .catch(error => {
-        console.log('error', error)
-        console.log('url', process.env.VUE_APP_API + 'posts')
+        console.error('error', error)
       })
   }
 }
@@ -136,4 +134,7 @@ export default {
     justify-content: space-between
     align-items: center
     margin-bottom: 10rem
+
+    +break-max($tablet)
+      flex-direction: column
 </style>

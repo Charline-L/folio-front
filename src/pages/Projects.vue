@@ -4,7 +4,7 @@
 
     <header class="p-table__top" v-if="top">
 
-      <h1 class="p-table__left t-t1">{{ title }}</h1>
+      <h1 class="p-table__left p-table__title t-t1">{{ title }}</h1>
 
       <div class="p-table__right p-table__intro p-table__intro--column t-description">
         
@@ -45,7 +45,7 @@
 
       <ListImages v-if="images" :images="images" />
 
-      <TableEnd />
+      <LinksEnd :next="next" />
       
     </main>
     
@@ -54,14 +54,14 @@
 </template>
 
 <script>
-import TableEnd from '../components/TableEnd'
+import LinksEnd from '../components/LinksEnd'
 import ListImages from '../components/ListImages'
 import axios from 'axios'
 
 export default {
   name: 'Projects',
   components: {
-    TableEnd,
+    LinksEnd,
     ListImages
   },
   data() {
@@ -69,25 +69,65 @@ export default {
       title: null,
       top: null,
       middle: null,
-      images: null
+      images: null,
+      next: {
+        id: null,
+        image: null,
+        title: null
+      }
     }
   },
-  mounted () {
-    window.scrollTo(0, 0)
+  created () {
+    this.fetchData()
+  },
+  watch: {
+    '$route': 'fetchData'
+  },
+  methods: {
+    fetchData () {
+      this.resetData()
+      window.scrollTo(0, 0)
+      axios 
+      .get(process.env.VUE_APP_API + 'posts/' + this.$route.params.id)
+        .then(response => {
+          const data = response.data.acf
+          this.title = data.title
+          this.top = data.top
+          this.middle = data.middle
+          this.images = data.images
+          this.next.id = data.next
+          this.getNext()
+        })
+        .catch(error => {
+          console.error('error', error)
+          this.$router.push('/error')
+        })
+    },
+    getNext() {
 
-    axios 
-    .get(process.env.VUE_APP_API + 'posts/' + this.$route.params.id)
-      .then(response => {
-        const data = response.data.acf
-        this.title = data.title
-        this.top = data.top
-        this.middle = data.middle
-        this.images = data.images
-      })
-      .catch(error => {
-        console.log('error', error)
-        console.log('url', process.env.VUE_APP_API + 'acf/v3/pages/5')
-      })
+      axios 
+      .get(process.env.VUE_APP_API + 'posts/' + this.next.id)
+        .then(response => {
+          const data = response.data.acf
+          this.next.title = data.title
+          this.next.image = data.boxe_images.three
+        })
+        .catch(error => {
+          console.error('error', this.next.id, error)
+          this.$router.push('/error')
+        })
+    },
+    resetData() {
+      this.title = null;
+      this.top = null;
+      this.middle = null;
+      this.images = null;
+      this.next = {
+        id: null,
+        image: null,
+        title: null
+      }
+    }
   }
 }
 </script>

@@ -17,4 +17,7 @@ export default {
 .c-tmce
   +size(calc(100% - 15rem), auto)
   margin-bottom: 10rem
+  
+  +break-max($tablet)
+    width: 100%
 </style>

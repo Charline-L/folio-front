@@ -72,6 +72,9 @@ export default {
   justify-content: flex-end
   align-items: center
 
+  +break-max($tablet)
+    margin-top: 2rem
+
   &__item
     margin: 0 0.5rem
     +remove-margin-h
@@ -84,6 +87,9 @@ export default {
     justify-content: center
     align-items: center
     +transition-25-ease
+
+    +break-max($tablet)
+      border-width: 2px
 
     &:hover
       background-color: $black

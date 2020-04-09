@@ -9,6 +9,10 @@
   font-size: 3.2rem
   line-height: 5rem
 
+  +break-max($tablet)
+    font-size: 2.2rem
+    line-height: 4rem
+
   a
     display: inline-block
     position: relative
@@ -21,6 +25,9 @@
       background-color: $black
       z-index: 0
       +transition-25-ease
+
+      +break-max($tablet)
+        height: 2px
 
     &:hover
       color: $powder !important
@@ -43,16 +50,22 @@
   font-size: 1.6rem
   line-height: 2rem
 
+
 .t-description
   font-family: $light
   font-size: 2.2rem
   line-height: 3rem
+  +break-max($tablet)
+    font-size: 1.6rem
+    line-height: 2rem
 
 .t-bold
   font-family: $bold
 
 .t-emoji
   font-size: 5rem
+  +break-max($tablet)
+    font-size: 3rem
 
   &--small
     font-size: 3rem

@@ -59,6 +59,9 @@ export default {
   align-items: flex-start
   margin-bottom: 10rem
 
+  +break-max($tablet)
+    flex-direction: column
+
   &__group
     padding-right: 2rem
 

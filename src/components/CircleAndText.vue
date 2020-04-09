@@ -27,6 +27,10 @@ export default {
   display: flex
   align-items: center
 
+  +break-max($tablet)
+    flex-direction: column
+    text-align: center
+
   &__emoji
     +size(20rem)
     display: flex
@@ -36,5 +40,10 @@ export default {
     border-radius: 100%
     padding-top: 1rem  
     margin-right: 8rem
+
+    +break-max($tablet)
+      +size(10rem)
+      margin-bottom: 2rem
+      margin-right: 0
 
 </style>

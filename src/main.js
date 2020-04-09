@@ -24,7 +24,10 @@ const router = new VueRouter({
     },
     {
       path: '/projects/:id',
-      component: Projects
+      component: Projects,
+      props: {
+        default: true
+      }
     },
     {
       path: '*',

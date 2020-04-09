@@ -58,8 +58,13 @@ export default {
   +remove-margin-v
 
   &:hover
-    .c-tag__number
-      right: -4rem
+    +break-min($tablet)
+      .c-tag__number
+        right: -4rem
+
+  +break-max($tablet)
+    margin-bottom: 0
+    margin: 0 2rem
 
   &--active
     .c-tag__number

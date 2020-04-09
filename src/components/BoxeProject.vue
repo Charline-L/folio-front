@@ -59,6 +59,11 @@ export default {
 
     &:last-child
       border-bottom: solid 5px $black
+      +break-max($tablet)
+        border-bottom: solid 2px $black
+
+    +break-max($tablet)
+      border-top: solid 2px $black
 
   &__container-texts
     margin-right: 3rem
@@ -66,6 +71,7 @@ export default {
 
   &__container-images
     margin-right: 3rem
+    flex-shrink: 0
 
   &__image
     +size(11.4rem)
@@ -76,6 +82,9 @@ export default {
     margin: 0 1rem
     +remove-margin-h
 
+    +break-max($tablet)
+      display: none
+
   &__link
     display: flex
     align-items: center
@@ -84,6 +93,12 @@ export default {
     border-radius: 100%
     +transition-25-ease
     overflow: hidden
+
+    +break-max($tablet)
+      +size(7.5rem)  
+      background-color: $black
+      .c-boxe-project__svg path
+        fill: $powder
 
     &:hover
       background-color: $black
