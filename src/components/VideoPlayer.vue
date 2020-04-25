@@ -17,9 +17,11 @@ export default {
 .c-video
   +size(100%, auto)
   margin-bottom: 14rem
+  border-top: solid 5px $black
 
   +break-max($tablet)
     margin-bottom: 10rem
+    border-width: 2px
 
 </style>
 
