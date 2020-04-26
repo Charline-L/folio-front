@@ -1,5 +1,5 @@
 <template>
-  <video autoplay muted loop class="c-video">
+  <video autoplay muted loop class="c-video" playsinline>
     <source :src="src" type="video/mp4">
   </video>
 </template>
