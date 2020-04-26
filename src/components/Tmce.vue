@@ -15,7 +15,7 @@ export default {
 
 <style lang="sass">
 .c-tmce
-  +size(calc(100% - 15rem), auto)
+  +size(calc(100% - 20rem), auto)
   margin-bottom: 10rem
   
   +break-max($tablet)
